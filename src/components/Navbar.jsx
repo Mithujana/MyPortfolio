@@ -29,7 +29,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold text-gradient cursor-pointer">
-          <Link to="home" smooth={true} duration={500}>Mithujan.</Link>
+          <Link to="home" smooth={true} duration={500}>Mithujana.</Link>
         </div>
 
         {/* Desktop Nav */}
