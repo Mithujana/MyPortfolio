@@ -1,0 +1,93 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { GraduationCap, Briefcase, Code2, Award } from 'lucide-react';
+
+const About = () => {
+  const stats = [
+    { icon: <Code2 size={24} />, label: "Projects Completed", value: "10+" },
+    { icon: <Award size={24} />, label: "Technologies Used", value: "15+" },
+    { icon: <Briefcase size={24} />, label: "Experience", value: "1 Year" },
+  ];
+
+  return (
+    <section id="about" className="py-24 relative z-10">
+      <div className="container mx-auto px-6 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">About <span className="text-gradient">Me</span></h2>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-2xl font-semibold mb-4">Who I am</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed text-lg">
+              I am an enthusiastic Full Stack Developer and undergraduate at SLIIT with hands-on experience in backend development through my internship at CodeLantic Pvt Ltd. 
+            </p>
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-8">
+              I specialize in building scalable applications using Java Spring Boot, React.js, and MongoDB while focusing on clean architecture, performance, and user experience.
+            </p>
+
+            <div className="grid grid-cols-3 gap-4">
+              {stats.map((stat, index) => (
+                <div key={index} className="glass-card p-4 rounded-2xl text-center group hover:-translate-y-1 transition-transform duration-300">
+                  <div className="text-primary mb-2 flex justify-center group-hover:scale-110 transition-transform">{stat.icon}</div>
+                  <h4 className="text-2xl font-bold text-slate-800 dark:text-slate-200">{stat.value}</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-primary/10 text-primary rounded-xl">
+                  <GraduationCap size={32} />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold mb-1">Education</h4>
+                  <p className="text-primary font-medium mb-2">SLIIT</p>
+                  <p className="text-slate-600 dark:text-slate-400">Undergraduate reading for a BSc (Hons) in Information Technology specializing in Software Engineering.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-blue-500/10 text-blue-500 rounded-xl">
+                  <Briefcase size={32} />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold mb-1">Internship</h4>
+                  <p className="text-blue-500 font-medium mb-2">CodeLantic Pvt Ltd</p>
+                  <p className="text-slate-600 dark:text-slate-400">Former Trainee Backend Developer gaining hands-on experience in building enterprise-level scalable backend systems.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
