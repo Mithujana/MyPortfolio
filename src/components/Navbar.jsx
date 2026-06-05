@@ -26,16 +26,15 @@ const Navbar = ({ darkMode, toggleTheme }) => {
 
   return (
     <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-auto z-50">
-      <nav 
-        className={`transition-all duration-500 rounded-full flex items-center justify-between md:justify-center gap-6 md:gap-12 border ${
-          isScrolled 
-            ? 'glass-card border-white/20 shadow-2xl py-2 px-6' 
+      <nav
+        className={`transition-all duration-500 rounded-full flex items-center justify-between md:justify-center gap-6 md:gap-12 border ${isScrolled
+            ? 'glass-card border-white/20 shadow-2xl py-2 px-6'
             : 'bg-white/40 dark:bg-black/20 backdrop-blur-md border-white/10 shadow-lg py-3 px-8'
-        }`}
+          }`}
       >
         {/* Logo */}
         <div className="text-xl md:text-2xl font-bold text-gradient cursor-pointer flex-shrink-0">
-          <Link to="home" smooth={true} duration={500}>Mithujana.</Link>
+          <Link to="home" smooth={true} duration={500}>Mithujana.S</Link>
         </div>
 
         {/* Desktop Nav */}
@@ -57,7 +56,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
             ))}
           </ul>
         </div>
-        
+
         {/* Desktop Theme Toggle */}
         <div className="hidden md:flex items-center border-l border-slate-300 dark:border-slate-700 pl-6 ml-2">
           <button

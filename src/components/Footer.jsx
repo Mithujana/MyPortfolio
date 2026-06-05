@@ -13,13 +13,13 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="#" className="p-2 text-slate-500 hover:text-primary transition-colors">
+            <a href="https://github.com/Mithujana" className="p-2 text-slate-500 hover:text-primary transition-colors">
               <FaGithub size={20} />
             </a>
-            <a href="#" className="p-2 text-slate-500 hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/in/mithujana-sriranjan-4324a4368/" className="p-2 text-slate-500 hover:text-primary transition-colors">
               <FaLinkedin size={20} />
             </a>
-            <a href="#" className="p-2 text-slate-500 hover:text-primary transition-colors">
+            <a href="mailto:mithujanas2305@gmail.com" className="p-2 text-slate-500 hover:text-primary transition-colors">
               <FaEnvelope size={20} />
             </a>
           </div>
