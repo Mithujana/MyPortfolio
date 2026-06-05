@@ -6,27 +6,29 @@ import { FaGithub } from 'react-icons/fa';
 const Projects = () => {
   const projects = [
     {
-      title: "Skill Sharing & Learning Platform",
-      techStack: ["React.js", "Spring Boot", "MongoDB", "JWT", "WebSocket"],
-      features: ["Authentication", "Real-time notifications", "Learning plans", "Community interaction"],
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      github: "#",
+      title: "Theatre Booking System",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      features: [
+        "Online movie ticket booking system",
+        "Real-time seat selection and availability updates",
+        "User authentication and booking management",
+        "Responsive UI for seamless user experience"
+      ],
+      image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
+      github: "https://github.com/Mithujana",
       demo: "#"
     },
     {
-      title: "Finance Management System",
-      techStack: ["Spring Boot", "MongoDB", "OCR"],
-      features: ["Expense tracking", "Receipt scanning", "Financial analytics"],
-      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      github: "#",
-      demo: "#"
-    },
-    {
-      title: "Work Order Management System",
-      techStack: ["Spring Boot", "MongoDB"],
-      features: ["Work order management", "Status tracking", "User management"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      github: "#",
+      title: "Smart Fish Route Predictor",
+      techStack: ["Python", "XGBoost", "Pandas", "NumPy", "Scikit-learn"],
+      features: [
+        "Fish market price forecasting using machine learning",
+        "Time-series analysis with XGBoost and LSTM models",
+        "Feature engineering and predictive analytics",
+        "Decision-support insights for fisheries stakeholders"
+      ],
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
+      github: "https://github.com/Mithujana",
       demo: "#"
     }
   ];

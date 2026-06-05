@@ -9,7 +9,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -25,36 +25,47 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 glass-card' : 'py-5 bg-transparent'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-auto z-50">
+      <nav 
+        className={`transition-all duration-500 rounded-full flex items-center justify-between md:justify-center gap-6 md:gap-12 border ${
+          isScrolled 
+            ? 'glass-card border-white/20 shadow-2xl py-2 px-6' 
+            : 'bg-white/40 dark:bg-black/20 backdrop-blur-md border-white/10 shadow-lg py-3 px-8'
+        }`}
+      >
         {/* Logo */}
-        <div className="text-2xl font-bold text-gradient cursor-pointer">
+        <div className="text-xl md:text-2xl font-bold text-gradient cursor-pointer flex-shrink-0">
           <Link to="home" smooth={true} duration={500}>Mithujana.</Link>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          <ul className="flex space-x-8">
+        <div className="hidden md:flex items-center">
+          <ul className="flex items-center space-x-1">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <Link
                   to={link.to}
                   smooth={true}
                   duration={500}
-                  className="cursor-pointer text-sm font-medium hover:text-primary transition-colors duration-300"
+                  spy={true}
+                  activeClass="bg-primary/10 text-primary dark:text-primary font-semibold"
+                  className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-primary/5 px-4 py-2 rounded-full transition-all duration-300"
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
           </ul>
-          
+        </div>
+        
+        {/* Desktop Theme Toggle */}
+        <div className="hidden md:flex items-center border-l border-slate-300 dark:border-slate-700 pl-6 ml-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300 focus:outline-none"
+            className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors duration-300 focus:outline-none shadow-sm"
             aria-label="Toggle Dark Mode"
           >
-            {darkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} className="text-slate-700" />}
+            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} />}
           </button>
         </div>
 
@@ -67,18 +78,19 @@ const Navbar = ({ darkMode, toggleTheme }) => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full glass-card border-t border-white/10 shadow-lg md:hidden"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full mt-4 left-0 w-full glass-card border border-white/20 dark:border-white/10 shadow-2xl rounded-2xl overflow-hidden"
           >
-            <ul className="flex flex-col py-4 px-6 space-y-4">
+            <ul className="flex flex-col py-2 px-4 space-y-1">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -86,7 +98,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                     smooth={true}
                     duration={500}
                     onClick={() => setIsOpen(false)}
-                    className="block text-lg font-medium hover:text-primary transition-colors"
+                    className="block text-center text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary hover:bg-primary/10 rounded-xl py-3 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -96,7 +108,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </div>
   );
 };
 

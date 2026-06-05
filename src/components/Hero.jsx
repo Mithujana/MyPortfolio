@@ -1,33 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { Code, Database, Layout } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaJava, FaBrain, FaRobot } from 'react-icons/fa';
+import profileImg from '../assets/Profile.jpeg';
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-      {/* Floating Icons */}
+      {/* Floating Tech Icons */}
       <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-[15%] text-primary/40 dark:text-primary/60 hidden md:block"
+        animate={{ y: [0, -20, 0], rotate: [0, 15, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/4 left-[15%] text-[#61DAFB]/30 dark:text-[#61DAFB]/40 hidden md:block"
       >
-        <Code size={48} />
+        <FaReact size={56} />
       </motion.div>
       <motion.div
-        animate={{ y: [0, 20, 0] }}
+        animate={{ y: [0, 20, 0], rotate: [0, -15, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute top-1/3 right-[15%] text-blue-500/40 dark:text-blue-500/60 hidden md:block"
+        className="absolute top-1/3 right-[15%] text-[#f89820]/30 dark:text-[#f89820]/40 hidden md:block"
       >
-        <Database size={56} />
+        <FaJava size={56} />
       </motion.div>
       <motion.div
-        animate={{ rotate: [0, 10, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-1/4 left-[20%] text-purple-400/40 dark:text-purple-400/60 hidden md:block"
+        animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute bottom-1/4 left-[20%] text-emerald-500/30 dark:text-emerald-500/40 hidden md:block"
       >
-        <Layout size={40} />
+        <FaRobot size={48} />
+      </motion.div>
+      <motion.div
+        animate={{ y: [0, 15, 0], scale: [1, 1.05, 1] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute bottom-1/3 right-[25%] text-pink-500/30 dark:text-pink-500/40 hidden md:block"
+      >
+        <FaBrain size={48} />
       </motion.div>
 
       <div className="container mx-auto px-6 text-center z-10">
@@ -35,11 +42,20 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative w-40 h-40 mx-auto mb-8 rounded-full p-1 bg-gradient-to-r from-primary to-purple-400"
+          className="relative w-48 h-48 mx-auto mb-10 group"
         >
-          <div className="w-full h-full rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
-             {/* Profile image placeholder - the user asked for an animated profile image placeholder */}
-             <div className="text-6xl font-bold text-primary/50">M</div>
+          {/* 3D Glowing Ambient Rings */}
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary via-purple-500 to-blue-500 opacity-50 blur-xl group-hover:opacity-80 group-hover:blur-2xl transition-all duration-700"></div>
+          
+          {/* Main 3D Container */}
+          <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-b from-white to-slate-300 dark:from-slate-700 dark:to-slate-900 shadow-[0_20px_50px_rgba(8,_112,_184,_0.3)] dark:shadow-[0_20px_50px_rgba(139,_92,_246,_0.3)] group-hover:shadow-[0_20px_60px_rgba(139,_92,_246,_0.6)] transform group-hover:-translate-y-3 transition-all duration-500 z-10">
+            <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-white dark:border-[#0f1423] flex items-center justify-center bg-slate-200 dark:bg-slate-800">
+               <img 
+                 src={profileImg} 
+                 alt="Mithujana" 
+                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+               />
+            </div>
           </div>
         </motion.div>
 
@@ -93,14 +109,14 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="flex items-center justify-center gap-6"
         >
-          <a href="#" className="p-3 bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white dark:hover:bg-primary transition-colors text-slate-600 dark:text-slate-400">
-            <FaGithub size={24} />
+          <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-[#1a1f35] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all shadow-sm hover:shadow-primary/20 hover:-translate-y-1">
+            <FaGithub size={20} />
           </a>
-          <a href="#" className="p-3 bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white dark:hover:bg-primary transition-colors text-slate-600 dark:text-slate-400">
-            <FaLinkedin size={24} />
+          <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-[#1a1f35] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all shadow-sm hover:shadow-primary/20 hover:-translate-y-1">
+            <FaLinkedin size={20} />
           </a>
-          <a href="#" className="p-3 bg-slate-200 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white dark:hover:bg-primary transition-colors text-slate-600 dark:text-slate-400">
-            <FaEnvelope size={24} />
+          <a href="#" className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-[#1a1f35] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:border-primary/30 hover:bg-primary/5 transition-all shadow-sm hover:shadow-primary/20 hover:-translate-y-1">
+            <FaEnvelope size={20} />
           </a>
         </motion.div>
       </div>
