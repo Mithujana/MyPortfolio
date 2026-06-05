@@ -15,6 +15,17 @@ const Experience = () => {
         "Collaborated using GitLab and Jira",
         "Participated in Agile development"
       ]
+    },
+    {
+      company: "Undergraduate Research Project",
+      role: "Research Assistant / Machine Learning Contributor",
+      date: "Academic Project",
+      responsibilities: [
+        "Participated in AI-based fisheries decision support research",
+        "Developed forecasting models using machine learning (XGBoost)",
+        "Conducted data analysis and model evaluation",
+        "Co-authored undergraduate research paper"
+      ]
     }
   ];
 
@@ -45,7 +56,7 @@ const Experience = () => {
               <div className="md:flex items-center justify-between mb-8 relative">
                 {/* Timeline Line */}
                 <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 transform -translate-x-1/2 z-0"></div>
-                
+
                 {/* Mobile Timeline Line */}
                 <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 z-0"></div>
 
