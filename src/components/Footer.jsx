@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-2xl font-bold text-gradient">
-            Mithujana.
+            Mithujana.S
           </div>
-          
+
           <div className="flex items-center gap-4">
             <a href="#" className="p-2 text-slate-500 hover:text-primary transition-colors">
               <FaGithub size={20} />
@@ -30,16 +30,16 @@ const Footer = () => {
             <Link to="projects" smooth={true} duration={500} className="hover:text-primary cursor-pointer transition-colors">Projects</Link>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500 dark:text-slate-500">
             &copy; {new Date().getFullYear()} Mithujana. All rights reserved.
           </p>
-          
-          <Link 
-            to="home" 
-            smooth={true} 
-            duration={500} 
+
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
             className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer"
             aria-label="Back to Top"
           >
