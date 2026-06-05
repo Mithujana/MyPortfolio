@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { 
-  SiReact, SiSpringboot, SiMongodb, SiMysql, SiDocker, 
-  SiGit, SiGithub, SiPostman, SiTailwindcss, SiJsonwebtokens 
+
+import {
+  SiReact, SiSpringboot, SiMongodb, SiMysql, SiDocker,
+  SiGit, SiGithub, SiPostman, SiTailwindcss, SiJsonwebtokens
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { TbApi } from 'react-icons/tb';
@@ -18,16 +19,41 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+
+    try {
+      const res = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
+        setIsSuccess(true);
+
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    }
+
+    setIsSubmitting(false);
   };
 
   const techStack = [
@@ -47,7 +73,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 relative z-10 overflow-hidden">
-      
+
       {/* Tech Stack Marquee */}
       <div className="w-full bg-primary/5 border-y border-primary/10 py-6 mb-20 overflow-hidden relative flex">
         <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-slate-50 via-transparent to-slate-50 dark:from-[#0B0F19] dark:via-transparent dark:to-[#0B0F19]"></div>
@@ -149,8 +175,8 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium text-slate-700 dark:text-slate-300">Your Name</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         id="name"
                         name="name"
                         required
@@ -162,8 +188,8 @@ const Contact = () => {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium text-slate-700 dark:text-slate-300">Your Email</label>
-                      <input 
-                        type="email" 
+                      <input
+                        type="email"
                         id="email"
                         name="email"
                         required
@@ -174,11 +200,11 @@ const Contact = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="subject" className="text-sm font-medium text-slate-700 dark:text-slate-300">Subject</label>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       id="subject"
                       name="subject"
                       required
@@ -188,10 +214,10 @@ const Contact = () => {
                       placeholder="How can I help you?"
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-slate-700 dark:text-slate-300">Message</label>
-                    <textarea 
+                    <textarea
                       id="message"
                       name="message"
                       required
@@ -202,9 +228,9 @@ const Contact = () => {
                       placeholder="Write your message here..."
                     ></textarea>
                   </div>
-                  
-                  <button 
-                    type="submit" 
+
+                  <button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-medium transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02]"
                   >
