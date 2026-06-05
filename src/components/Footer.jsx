@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-2xl font-bold text-gradient">
-            Mithujana.S
+            Mithujana
           </div>
 
           <div className="flex items-center gap-4">
