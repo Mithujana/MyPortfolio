@@ -135,13 +135,13 @@ const Contact = () => {
             <div className="glass-card p-8 rounded-3xl mt-8">
               <h4 className="text-xl font-bold mb-6 text-slate-800 dark:text-slate-200 text-center">Connect with me</h4>
               <div className="flex justify-center gap-4">
-                <a href="#" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
+                <a href="https://github.com/Mithujana" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
                   <FaGithub size={24} />
                 </a>
-                <a href="#" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
+                <a href="https://www.linkedin.com/in/mithujana-sriranjan-4324a4368/" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
                   <FaLinkedin size={24} />
                 </a>
-                <a href="#" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
+                <a href="mailto:mithujana2305@gmail.com" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
                   <FaEnvelope size={24} />
                 </a>
               </div>
