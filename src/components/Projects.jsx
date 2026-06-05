@@ -15,8 +15,7 @@ const Projects = () => {
         "Responsive UI for seamless user experience"
       ],
       image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80",
-      github: "https://github.com/Mithujana",
-      demo: "#"
+      github: "https://github.com/Mithujana"
     },
     {
       title: "Smart Fish Route Predictor",
@@ -28,8 +27,7 @@ const Projects = () => {
         "Decision-support insights for fisheries stakeholders"
       ],
       image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80",
-      github: "https://github.com/Mithujana",
-      demo: "#"
+      github: "https://github.com/Mithujana"
     }
   ];
 
@@ -59,16 +57,16 @@ const Projects = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold mb-3 text-slate-800 dark:text-slate-100 group-hover:text-primary transition-colors">{project.title}</h3>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.techStack.map((tech, tIdx) => (
                     <span key={tIdx} className="text-xs font-medium px-2.5 py-1 bg-primary/10 text-primary rounded-full">
@@ -87,14 +85,9 @@ const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-200 dark:border-slate-700/50">
-                  <a 
-                    href={project.demo} 
-                    className="flex items-center gap-2 text-sm font-medium bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-colors w-full justify-center shadow-lg shadow-primary/20"
-                  >
-                    <ExternalLink size={16} /> Live Demo
-                  </a>
-                  <a 
-                    href={project.github} 
+
+                  <a
+                    href={project.github}
                     className="flex items-center gap-2 text-sm font-medium bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 px-4 py-2 rounded-lg transition-colors w-full justify-center"
                   >
                     <FaGithub size={16} /> GitHub
