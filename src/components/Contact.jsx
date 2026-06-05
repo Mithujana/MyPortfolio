@@ -128,7 +128,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">Email</h4>
-                <a href="mailto:mithujana@example.com" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">mithujana@example.com</a>
+                <a href="mailto:mithujanas2305@gmail.com" className="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">mithujana@example.com</a>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ const Contact = () => {
                 <a href="https://www.linkedin.com/in/mithujana-sriranjan-4324a4368/" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
                   <FaLinkedin size={24} />
                 </a>
-                <a href="mailto:mithujana2305@gmail.com" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
+                <a href="mailto:mithujanas2305@gmail.com" className="p-4 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-110 shadow-md text-slate-600 dark:text-slate-400 hover:shadow-primary/30">
                   <FaEnvelope size={24} />
                 </a>
               </div>
