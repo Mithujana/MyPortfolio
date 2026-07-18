@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaEnvelope, FaReact, FaJava, FaBrain, FaRobot } from 'react-icons/fa';
-import profileImg from '../assets/Profile.jpeg';
+import profileImg from '../assets/MyProfile.png';
 
 const Hero = () => {
   return (
@@ -42,21 +42,13 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative w-48 h-48 mx-auto mb-10 group"
+          className="relative w-72 h-72 mx-auto mb-10 group"
         >
-          {/* 3D Glowing Ambient Rings */}
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-primary via-purple-500 to-blue-500 opacity-50 blur-xl group-hover:opacity-80 group-hover:blur-2xl transition-all duration-700"></div>
-          
-          {/* Main 3D Container */}
-          <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-b from-white to-slate-300 dark:from-slate-700 dark:to-slate-900 shadow-[0_20px_50px_rgba(8,_112,_184,_0.3)] dark:shadow-[0_20px_50px_rgba(139,_92,_246,_0.3)] group-hover:shadow-[0_20px_60px_rgba(139,_92,_246,_0.6)] transform group-hover:-translate-y-3 transition-all duration-500 z-10">
-            <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-white dark:border-[#0f1423] flex items-center justify-center bg-slate-200 dark:bg-slate-800">
-               <img 
-                 src={profileImg} 
-                 alt="Mithujana" 
-                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-               />
-            </div>
-          </div>
+          <img 
+            src={profileImg} 
+            alt="Mithujana" 
+            className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-2"
+          />
         </motion.div>
 
         <motion.div
