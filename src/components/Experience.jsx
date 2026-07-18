@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, Trophy } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -25,6 +25,17 @@ const Experience = () => {
         "Developed forecasting models using machine learning (XGBoost)",
         "Conducted data analysis and model evaluation",
         "Co-authored undergraduate research paper"
+      ]
+    },
+    {
+      company: "SLASSCOM, 2026",
+      role: "SLASSCOM National Ingenuity Awards 2026",
+      date: "Award Recipient – University Category",
+      type: "award",
+      responsibilities: [
+        "Selected as an award recipient in recognition of innovation and excellence",
+        "Recognized for a university-level technology solution",
+        "Awarded by SLASSCOM – Sri Lanka's premier IT & BPM industry association"
       ]
     }
   ];
@@ -72,13 +83,13 @@ const Experience = () => {
                 </div>
 
                 {/* Center Icon */}
-                <div className="absolute left-[-1.1rem] md:left-1/2 top-6 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-10 h-10 rounded-full bg-primary flex items-center justify-center border-4 border-slate-50 dark:border-[#0B0F19] z-20 shadow-lg shadow-primary/40">
-                  <Briefcase size={18} className="text-white" />
+                <div className={`absolute left-[-1.1rem] md:left-1/2 top-6 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center border-4 border-slate-50 dark:border-[#0B0F19] z-20 shadow-lg ${exp.type === 'award' ? 'bg-amber-500 shadow-amber-400/40' : 'bg-primary shadow-primary/40'}`}>
+                  {exp.type === 'award' ? <Trophy size={18} className="text-white" /> : <Briefcase size={18} className="text-white" />}
                 </div>
 
                 <div className="md:w-5/12 pl-0 md:pl-10 relative z-10">
                   <div className="glass-card p-6 rounded-3xl hover:shadow-primary/10 transition-shadow duration-300">
-                    <h4 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">Responsibilities:</h4>
+                    <h4 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">{exp.type === 'award' ? 'Highlights:' : 'Responsibilities:'}</h4>
                     <ul className="space-y-3">
                       {exp.responsibilities.map((req, rIdx) => (
                         <li key={rIdx} className="flex items-start gap-3">
