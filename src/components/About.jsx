@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Code2, Award } from 'lucide-react';
+import Lanyard from './Lanyard';
+import profileCardImg from '../assets/myprofilecard.jpeg';
 
 const About = () => {
   const stats = [
@@ -38,7 +40,7 @@ const About = () => {
               I specialize in building scalable applications using Java Spring Boot, React.js, and MongoDB while focusing on clean architecture, performance, and user experience.
             </p>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 mb-8">
               {stats.map((stat, index) => (
                 <div key={index} className="glass-card p-4 rounded-2xl text-center group hover:-translate-y-1 transition-transform duration-300">
                   <div className="text-primary mb-2 flex justify-center group-hover:scale-110 transition-transform">{stat.icon}</div>
@@ -47,6 +49,36 @@ const About = () => {
                 </div>
               ))}
             </div>
+
+            <div className="space-y-6">
+              <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-primary/10 text-primary rounded-xl">
+                    <GraduationCap size={32} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-1">Education</h4>
+                    <p className="text-primary font-medium mb-2">SLIIT</p>
+                    <p className="text-slate-600 dark:text-slate-400">Undergraduate reading for a BSc (Hons) in Information Technology specializing in Software Engineering.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-blue-500/10 text-blue-500 rounded-xl">
+                    <Briefcase size={32} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold mb-1">Internship</h4>
+                    <p className="text-blue-500 font-medium mb-2">CodeLantic Pvt Ltd</p>
+                    <p className="text-slate-600 dark:text-slate-400">Former Trainee Backend Developer gaining hands-on experience in building enterprise-level scalable backend systems.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
@@ -54,34 +86,16 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="flex items-center justify-center w-full"
           >
-            <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 text-primary rounded-xl">
-                  <GraduationCap size={32} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-1">Education</h4>
-                  <p className="text-primary font-medium mb-2">SLIIT</p>
-                  <p className="text-slate-600 dark:text-slate-400">Undergraduate reading for a BSc (Hons) in Information Technology specializing in Software Engineering.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="glass-card p-6 rounded-3xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 text-blue-500 rounded-xl">
-                  <Briefcase size={32} />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-1">Internship</h4>
-                  <p className="text-blue-500 font-medium mb-2">CodeLantic Pvt Ltd</p>
-                  <p className="text-slate-600 dark:text-slate-400">Former Trainee Backend Developer gaining hands-on experience in building enterprise-level scalable backend systems.</p>
-                </div>
-              </div>
+            <div className="w-full h-[700px] relative">
+              <Lanyard 
+                position={[0, 0, 15]} 
+                fov={15}
+                gravity={[0, -40, 0]} 
+                frontImage={profileCardImg} 
+                imageFit="cover" 
+              />
             </div>
           </motion.div>
         </div>

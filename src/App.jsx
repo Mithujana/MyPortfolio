@@ -7,7 +7,8 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
+import { SmoothCursor } from './components/SmoothCursor';
+import { FaDownload } from 'react-icons/fa';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <div className="min-h-screen font-sans selection:bg-primary/30">
-      <CustomCursor />
+      <SmoothCursor />
       {/* Background gradients */}
       <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
         <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/10 dark:bg-primary/20 blur-[120px]" />
@@ -33,8 +34,17 @@ function App() {
 
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       
+      {/* Fixed Global Resume Button */}
+      <a
+        href="/resume.pdf"
+        download="Mithujana_Resume.pdf"
+        className="fixed top-6 right-6 md:top-8 md:right-8 z-50 px-4 py-2 bg-primary text-white text-sm font-medium rounded-full shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
+      >
+        <FaDownload size={12} /> Resume
+      </a>
+
       <main>
-        <Hero />
+        <Hero darkMode={darkMode} />
         <About />
         <Skills />
         <Experience />

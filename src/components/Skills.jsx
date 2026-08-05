@@ -8,6 +8,7 @@ import {
 } from 'react-icons/si';
 import { FaJava, FaCss3Alt } from 'react-icons/fa';
 import { TbApi, TbBrandVscode } from 'react-icons/tb';
+import OrbitImages from './OrbitImages';
 
 const Skills = () => {
   const skillCategories = [
@@ -78,23 +79,34 @@ const Skills = () => {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="glass-card p-8 rounded-3xl"
             >
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 md:hidden">
                 <span className="w-2 h-8 bg-primary rounded-full"></span>
                 {category.title}
               </h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {category.skills.map((skill, sIdx) => (
-                  <div 
-                    key={sIdx} 
-                    className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white/40 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 group cursor-default border border-transparent hover:border-primary/20"
-                  >
-                    <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300 drop-shadow-md">
-                      {skill.icon}
+              <div className="flex items-center justify-center w-full aspect-square max-w-[400px] mx-auto">
+                <OrbitImages
+                  images={category.skills.map(s => (
+                    <div className="flex flex-col items-center justify-center group w-full h-full cursor-default">
+                      <div className="text-4xl transform group-hover:scale-125 transition-transform duration-300 drop-shadow-md">
+                        {s.icon}
+                      </div>
                     </div>
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300 text-center">{skill.name}</span>
-                  </div>
-                ))}
+                  ))}
+                  shape="circle"
+                  baseWidth={400}
+                  radius={140}
+                  itemSize={60}
+                  duration={25 + (idx * 5)}
+                  responsive={true}
+                  centerContent={
+                    <div className="flex flex-col items-center justify-center z-10 w-24 h-24 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-white/10 shadow-lg">
+                      <h3 className="text-xl font-bold text-center text-slate-800 dark:text-slate-100">
+                        {category.title}
+                      </h3>
+                    </div>
+                  }
+                />
               </div>
             </motion.div>
           ))}
