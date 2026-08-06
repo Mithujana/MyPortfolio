@@ -34,14 +34,7 @@ function App() {
 
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       
-      {/* Fixed Global Resume Button */}
-      <a
-        href="/resume.pdf"
-        download="Mithujana_Resume.pdf"
-        className="fixed top-6 right-6 md:top-8 md:right-8 z-50 px-4 py-2 bg-primary text-white text-sm font-medium rounded-full shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
-      >
-        <FaDownload size={12} /> Resume
-      </a>
+
 
       <main>
         <Hero darkMode={darkMode} />

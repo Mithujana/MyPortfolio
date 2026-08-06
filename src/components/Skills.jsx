@@ -8,7 +8,7 @@ import {
 } from 'react-icons/si';
 import { FaJava, FaCss3Alt } from 'react-icons/fa';
 import { TbApi, TbBrandVscode } from 'react-icons/tb';
-import OrbitImages from './OrbitImages';
+import OrbitingCirclesGlobe from './ui/OrbitingCirclesGlobe';
 import ScrollFloat from './ScrollFloat';
 
 const Skills = () => {
@@ -79,48 +79,17 @@ const Skills = () => {
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {skillCategories.map((category, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card p-8 rounded-3xl"
-            >
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 md:hidden">
-                <span className="w-2 h-8 bg-primary rounded-full"></span>
-                {category.title}
-              </h3>
-              
-              <div className="flex items-center justify-center w-full aspect-square max-w-[400px] mx-auto">
-                <OrbitImages
-                  images={category.skills.map(s => (
-                    <div className="flex flex-col items-center justify-center group w-full h-full cursor-default">
-                      <div className="text-4xl transform group-hover:scale-125 transition-transform duration-300 drop-shadow-md">
-                        {s.icon}
-                      </div>
-                    </div>
-                  ))}
-                  shape="circle"
-                  baseWidth={400}
-                  radius={140}
-                  itemSize={60}
-                  duration={25 + (idx * 5)}
-                  responsive={true}
-                  centerContent={
-                    <div className="flex flex-col items-center justify-center z-10 w-24 h-24 rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-white/10 shadow-lg">
-                      <h3 className="text-xl font-bold text-center text-slate-800 dark:text-slate-100">
-                        {category.title}
-                      </h3>
-                    </div>
-                  }
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative flex flex-col items-center w-full max-w-4xl mx-auto py-12"
+        >
+          <div className="flex items-center justify-center w-full">
+            <OrbitingCirclesGlobe title="Tech Stack" skills={skillCategories.flatMap(c => c.skills)} />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

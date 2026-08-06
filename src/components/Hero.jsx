@@ -131,7 +131,7 @@ const Hero = ({ darkMode }) => {
                 duration={500}
                 className="w-full sm:w-auto"
               >
-                <ShinyButton className="w-full bg-primary hover:bg-primary-dark text-white shadow-[0_4px_14px_0_rgba(82,39,255,0.39)]">
+                <ShinyButton className="w-full bg-transparent text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
                   View Projects
                 </ShinyButton>
               </Link>
@@ -141,7 +141,7 @@ const Hero = ({ darkMode }) => {
                 duration={500}
                 className="w-full sm:w-auto"
               >
-                <ShinyButton className="w-full bg-slate-800 dark:bg-white text-white dark:text-slate-900 border border-slate-700 dark:border-transparent">
+                <ShinyButton className="w-full bg-transparent text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800">
                   Contact Me
                 </ShinyButton>
               </Link>

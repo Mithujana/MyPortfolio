@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import GooeyNav from './GooeyNav';
 import { AnimatedThemeToggler } from './AnimatedThemeToggler';
+import { Button } from './ui/button';
 
 const Navbar = ({ darkMode, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,8 +48,11 @@ const Navbar = ({ darkMode, toggleTheme }) => {
           />
         </div>
 
-        {/* Desktop Theme Toggle */}
+        {/* Desktop Theme Toggle & Resume */}
         <div className="hidden md:flex items-center border-l border-slate-300 dark:border-slate-700 pl-6 ml-2">
+          <Button variant="ghost" className="mr-2 flex items-center gap-2" onClick={() => window.open('/resume.pdf', '_blank')}>
+            <Download size={16} /> Resume
+          </Button>
           <AnimatedThemeToggler 
             theme={darkMode ? "dark" : "light"}
             onThemeChange={() => toggleTheme()}
@@ -92,6 +96,11 @@ const Navbar = ({ darkMode, toggleTheme }) => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Button variant="ghost" className="w-full mt-2 flex items-center justify-center gap-2" onClick={() => window.open('/resume.pdf', '_blank')}>
+                  <Download size={16} /> Resume
+                </Button>
+              </li>
             </ul>
           </motion.div>
         )}
