@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
 import {
   SiReact, SiSpringboot, SiMongodb, SiMysql, SiDocker,
   SiGit, SiGithub, SiPostman, SiTailwindcss, SiJsonwebtokens
 } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaPhone, FaMapMarkerAlt, FaJava } from 'react-icons/fa';
 import { TbApi } from 'react-icons/tb';
 import ScrollFloat from './ScrollFloat';
+import { LampDivider } from './ui/LampDivider';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -107,7 +106,7 @@ const Contact = () => {
           >
             Get In Touch
           </ScrollFloat>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
+          <LampDivider />
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.
           </p>

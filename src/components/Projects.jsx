@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import ScrollFloat from './ScrollFloat';
+import { LampDivider } from './ui/LampDivider';
 
 const Projects = () => {
   const projects = [
@@ -52,7 +53,7 @@ const Projects = () => {
           >
             Featured Projects
           </ScrollFloat>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <LampDivider />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

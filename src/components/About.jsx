@@ -6,6 +6,7 @@ import profileCardImg from '../assets/myprofilecard.jpeg';
 import ScrollFloat from './ScrollFloat';
 import MagicBento from './ui/MagicBento';
 import PixelTransition from './ui/PixelTransition';
+import { LampDivider } from './ui/LampDivider';
 
 const About = () => {
 
@@ -30,7 +31,7 @@ const About = () => {
           >
             About Me
           </ScrollFloat>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <LampDivider />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -117,7 +118,7 @@ const About = () => {
                     <img 
                       src={profileCardImg} 
                       alt="Mithujana" 
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover object-top -scale-x-100"
                     />
                   }
                   secondContent={

@@ -10,6 +10,7 @@ import { FaJava, FaCss3Alt } from 'react-icons/fa';
 import { TbApi, TbBrandVscode } from 'react-icons/tb';
 import OrbitingCirclesGlobe from './ui/OrbitingCirclesGlobe';
 import ScrollFloat from './ScrollFloat';
+import { LampDivider } from './ui/LampDivider';
 
 const Skills = () => {
   const skillCategories = [
@@ -76,7 +77,7 @@ const Skills = () => {
           >
             My Skills
           </ScrollFloat>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <LampDivider />
         </motion.div>
 
         <motion.div

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, CheckCircle2, Trophy } from 'lucide-react';
 import ScrollFloat from './ScrollFloat';
+import { LampDivider } from './ui/LampDivider';
 
 const Experience = () => {
   const experiences = [
@@ -61,7 +62,7 @@ const Experience = () => {
           >
             My Experience
           </ScrollFloat>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <LampDivider />
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
