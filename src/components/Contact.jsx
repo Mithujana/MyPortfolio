@@ -9,6 +9,7 @@ import {
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { TbApi } from 'react-icons/tb';
+import ScrollFloat from './ScrollFloat';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -96,7 +97,16 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Get In <span className="text-gradient">Touch</span></h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            containerClassName="text-3xl md:text-5xl font-bold mb-4"
+          >
+            Get In Touch
+          </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6"></div>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.

@@ -9,6 +9,7 @@ import {
 import { FaJava, FaCss3Alt } from 'react-icons/fa';
 import { TbApi, TbBrandVscode } from 'react-icons/tb';
 import OrbitImages from './OrbitImages';
+import ScrollFloat from './ScrollFloat';
 
 const Skills = () => {
   const skillCategories = [
@@ -65,7 +66,16 @@ const Skills = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">My <span className="text-gradient">Skills</span></h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            containerClassName="text-3xl md:text-5xl font-bold mb-4"
+          >
+            My Skills
+          </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </motion.div>
 

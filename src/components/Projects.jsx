@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
+import ScrollFloat from './ScrollFloat';
 
 const Projects = () => {
   const projects = [
@@ -41,7 +42,16 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured <span className="text-gradient">Projects</span></h2>
+          <ScrollFloat
+            animationDuration={1}
+            ease='back.inOut(2)'
+            scrollStart='center bottom+=50%'
+            scrollEnd='bottom bottom-=40%'
+            stagger={0.03}
+            containerClassName="text-3xl md:text-5xl font-bold mb-4"
+          >
+            Featured Projects
+          </ScrollFloat>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </motion.div>
 
