@@ -1,17 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Code2, Award } from 'lucide-react';
-import Lanyard from './Lanyard';
+
 import profileCardImg from '../assets/myprofilecard.jpeg';
 import ScrollFloat from './ScrollFloat';
 import MagicBento from './ui/MagicBento';
+import PixelTransition from './ui/PixelTransition';
 
 const About = () => {
-  const stats = [
-    { icon: <Code2 size={24} />, label: "Projects Completed", value: "10+" },
-    { icon: <Award size={24} />, label: "Technologies Used", value: "15+" },
-    { icon: <Briefcase size={24} />, label: "Experience", value: "1 Year" },
-  ];
+
 
   return (
     <section id="about" className="py-24 relative z-10">
@@ -111,14 +108,41 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center justify-center w-full sticky top-24"
           >
-            <div className="w-full h-[700px] relative">
-              <Lanyard 
-                position={[0, 0, 15]} 
-                fov={15}
-                gravity={[0, -40, 0]} 
-                frontImage={profileCardImg} 
-                imageFit="cover" 
-              />
+            <div className="glass-card w-full max-w-sm rounded-3xl p-8 flex flex-col items-center justify-center text-center relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-6 border-4 border-white dark:border-slate-800 shadow-2xl relative z-10">
+                <PixelTransition
+                  firstContent={
+                    <img 
+                      src={profileCardImg} 
+                      alt="Mithujana" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                  }
+                  secondContent={
+                    <div className="w-full h-full bg-primary flex flex-col items-center justify-center text-white">
+                      <p className="font-bold text-2xl mb-1">Hello!</p>
+                      <p className="text-sm font-medium">Let's connect</p>
+                    </div>
+                  }
+                  gridSize={12}
+                  pixelColor="currentColor"
+                  animationStepDuration={0.4}
+                  aspectRatio="100%"
+                  className="text-primary"
+                />
+              </div>
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2 tracking-tight">Mithujana Sriranjan</h3>
+                <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm md:text-base tracking-wide mb-4">
+                  Full Stack Developer
+                </div>
+                <p className="text-slate-600 dark:text-slate-400 text-sm md:text-base">
+                  Passionate about building beautiful, scalable software solutions.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
